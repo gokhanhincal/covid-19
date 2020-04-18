@@ -62,6 +62,7 @@ function CovidTable() {
       );
       setCountryCovidData(response.data);
     }
+
     const intervalValue = setInterval(() => {
       fetchData();
     }, 1000 * 60 * 5);
