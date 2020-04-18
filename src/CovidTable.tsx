@@ -41,7 +41,7 @@ function CovidTable() {
         return;
       }
       const response = await axios.get<ICountry[]>(
-        config.countriesApiUrl
+        config.covidApiUrl
       );
       const filteredCountries = response.data.filter(x => x.countryInfo.iso2);
       const currentCountryCode = await getLocation();
