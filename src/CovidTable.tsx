@@ -156,6 +156,4 @@ function CovidTable() {
   );
 }
 
-
-
 export default CovidTable;
