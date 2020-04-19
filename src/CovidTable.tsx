@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import config from "./Config"; 
+import config from "./Config";
 
 interface ICovidData {
   country: string;
@@ -41,7 +41,7 @@ function CovidTable() {
         return;
       }
       const response = await axios.get<ICountry[]>(
-       config.covidApiUrl
+        config.covidApiUrl
       );
       const filteredCountries = response.data.filter(x => x.countryInfo.iso2);
       const currentCountryCode = await getLocation();
