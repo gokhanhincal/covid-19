@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import config from "./Config";
+import WorldCovidTable from "./WorldCovidTable";
 
 interface ICovidData {
   country: string;
@@ -146,6 +147,7 @@ function CovidTable() {
             <th>Updated</th>
             <td>{new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(countryCovidData.updated)}</td>
           </tr>
+          <WorldCovidTable></WorldCovidTable>
         </tbody>
         <tfoot>
           <tr>

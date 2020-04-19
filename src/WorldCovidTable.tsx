@@ -49,60 +49,49 @@ function WorldCovidTable() {
         margin: "60px auto"
     };
 
-    const imageStyle = {
-        padding: "10px"
-    };
-
     if (!worldCovidData) {
         return (<div style={loadingStyle}>Loading...</div>)
     }
 
-    return (<div className="CovidTable">
-        <table className="table text-center table-striped">
-            <thead>
-                <tr>
-                    <th colSpan={2}>
-                        COVID19 WORLD STATISTICS
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th>Affected Countries</th>
-                    <td>{worldCovidData.affectedCountries}</td>
-                </tr>
-                <tr>
-                    <th>Deaths</th>
-                    <td>{worldCovidData.deaths}</td>
-                </tr>
-                <tr>
-                    <th>Today Deaths</th>
-                    <td>{worldCovidData.todayDeaths}</td>
-                </tr>
-                <tr>
-                    <th>Cases</th>
-                    <td>{worldCovidData.cases}</td>
-                </tr>
-                <tr>
-                    <th>Today Cases</th>
-                    <td>{worldCovidData.todayCases}</td>
-                </tr>
-                <tr>
-                    <th>Recovered</th>
-                    <td>{worldCovidData.recovered}</td>
-                </tr>
-                <tr>
-                    <th>Critical</th>
-                    <td>{worldCovidData.critical}</td>
-                </tr>
-                <tr>
-                    <th>Active</th>
-                    <td>{worldCovidData.active}</td>
-                </tr>
-            </tbody>
-        </table>
-
-    </div>);
+    return (<React.Fragment>
+        <tr>
+            <th colSpan={2}>
+                <b>WORLD COVID19 STATISTICS</b>
+            </th>
+        </tr>
+        <tr>
+            <th>Affected Countries</th>
+            <td>{worldCovidData.affectedCountries}</td>
+        </tr>
+        <tr>
+            <th>Deaths</th>
+            <td>{worldCovidData.deaths}</td>
+        </tr>
+        <tr>
+            <th>Today Deaths</th>
+            <td>{worldCovidData.todayDeaths}</td>
+        </tr>
+        <tr>
+            <th>Cases</th>
+            <td>{worldCovidData.cases}</td>
+        </tr>
+        <tr>
+            <th>Today Cases</th>
+            <td>{worldCovidData.todayCases}</td>
+        </tr>
+        <tr>
+            <th>Recovered</th>
+            <td>{worldCovidData.recovered}</td>
+        </tr>
+        <tr>
+            <th>Critical</th>
+            <td>{worldCovidData.critical}</td>
+        </tr>
+        <tr>
+            <th>Active</th>
+            <td>{worldCovidData.active}</td>
+        </tr>
+    </React.Fragment >);
 }
 
 
