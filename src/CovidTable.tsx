@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Config from "./Config"; 
+import config from "./Config"; 
 
 interface ICovidData {
   country: string;
@@ -31,7 +31,7 @@ function CovidTable() {
   const [currentLocation, setCurrentLocation] = useState<string>();
 
   async function getLocation() {
-    const response = await axios.get<ILocationData>(Config.currentLocationUrl);
+    const response = await axios.get<ILocationData>(config.currentLocationUrl);
     return response.data.country;
   }
 
@@ -41,7 +41,7 @@ function CovidTable() {
         return;
       }
       const response = await axios.get<ICountry[]>(
-       Config.countriesApiUrl
+       config.covidApiUrl
       );
       const filteredCountries = response.data.filter(x => x.countryInfo.iso2);
       const currentCountryCode = await getLocation();
@@ -59,7 +59,7 @@ function CovidTable() {
       return;
     async function fetchData() {
       const response = await axios.get<ICovidData>(
-        `${Config.covidApiUrl}${selectedCountry?.countryInfo.iso2}`
+        `${config.covidApiUrl}${selectedCountry?.countryInfo.iso2}`
       );
       setCountryCovidData(response.data);
     }
